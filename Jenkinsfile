@@ -1,8 +1,6 @@
 pipeline{
-tools{
 agent any
-maven M3
-}
+
 stages{
 stage('checkout'){
 steps{
