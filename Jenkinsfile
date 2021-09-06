@@ -1,5 +1,6 @@
 pipeline{
 tools{
+agent any
 maven M3
 }
 stages{
@@ -16,6 +17,7 @@ sh 'mvn clean compile'
 stage('test'){
 steps{
 sh 'mvn test'
+junit 'reports/**/*.xml'
 }
 }
 stage('deploy'){
